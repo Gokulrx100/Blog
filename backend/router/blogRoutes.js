@@ -9,7 +9,7 @@ const authController = require("../controllers/authController");
 const blogController = require("../controllers/blogControllers");
 
 
-router.post("/signup", validateRequest(signUpSchema), authController.signin);
+router.post("/signup", validateRequest(signUpSchema), authController.signup);
 
 router.post("/signin", validateRequest(signInSchema), authController.signin);
 

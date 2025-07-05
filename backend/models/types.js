@@ -2,6 +2,7 @@ const {z}=require("zod");
 
 const signUpSchema= z.object({
     name:z.string(),
+    gmail: z.string().email("Please enter a valid Gmail address"),
     username:z.string()
     .min(6,"username must be atleast 6 characters")
     .max(20,"username can have a max of 20 characters"),

@@ -6,7 +6,7 @@ async function Auth(req, res, next) {
   try {
     let { token } = req.headers;
     if (!token) {
-      return res.status(401).json("token not found");
+      return res.status(401).json({message:"token not found"});
     }
     let payload = jwt.verify(token, secret);
     let user = await User.findOne({ username: payload.username });

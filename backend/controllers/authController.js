@@ -6,14 +6,19 @@ const secret = "123random";
 
 const signup = async (req, res) => {
   try {
-    let { name, username, password } = req.body;
+    let { name, gmail, username, password } = req.body;
     let userExists = await User.findOne({ username: username });
     if (userExists) {
       return res.status(401).json({ message: "User already Exists" });
     }
+    let gmailExists = await User.findOne({ gmail: gmail }); // <-- check gmail
+    if (gmailExists) {
+      return res.status(401).json({ message: "Gmail already registered" });
+    }
     let hashedPassword = await passwordHash(password);
     let user = new User({
       name: name,
+      gmail:gmail,
       username: username,
       password: hashedPassword,
     });

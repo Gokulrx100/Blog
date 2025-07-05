@@ -1,0 +1,170 @@
+#create-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 80vh;
+  width: 100%;
+}
+
+.create-form {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 24px 0 rgba(0, 0, 0, 0.07);
+  padding: 1.6rem 1.5rem;
+  width: 100%;
+  max-width: 1000px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-top: 1.3rem;
+}
+
+.title-input textarea,
+.snippet-input textarea,
+.content-editable {
+  font-family:inherit;
+  width: 100%;
+  box-sizing: border-box;
+  font-size: 1rem;
+  border: 1.5px solid #ccc;
+  border-radius: 7px;
+  padding: 0.7em;
+  background: white;
+  transition: border 0.2s, box-shadow 0.2s;
+  outline: none;
+  resize: none;
+}
+
+.title-input textarea {
+  min-height: 4em;
+  max-height: 4em;
+}
+
+.snippet-input textarea {
+  min-height: 6em;
+  max-height: 6em;
+}
+
+.content-editable {
+  min-height: 16rem;
+}
+
+.title-input textarea:focus,
+.snippet-input textarea:focus,
+.content-editable:focus {
+  border: 1.5px solid #222;
+  box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1) inset;
+  background: #fff;
+}
+.label {
+  display: block;
+  margin:0 0 0.5em 0;
+  font-weight: 500;
+  font-size: 1.1rem;
+  letter-spacing: 0.06em;
+  background:white;
+}
+
+button {
+  background: #222;
+  color: #fff;
+  border: none;
+  border-radius: 7px;
+  padding: 0.8em 2.2em;
+  font-size: 1.1rem;
+  font-weight: 550;
+  letter-spacing: 0.2em;
+  width: 30%;
+  cursor: pointer;
+  margin-top: 1.2rem;
+  transition: background 0.2s, box-shadow 0.2s;
+  box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.06);
+  align-self: center;
+  margin-top: 1rem;
+  font-family: monospace;
+  text-transform: uppercase;
+  margin-bottom:0.8rem;
+}
+
+button:hover,
+button:focus {
+  background: #000;
+  box-shadow: 0 4px 16px 0 rgba(0, 0, 0, 0.13);
+}
+
+.content-tip {
+  font-size: 0.9em;
+  color: #888;
+  margin-top: 0.5em;
+  background:white;
+}
+
+.error-message {
+  color: red;
+  margin-top: 0.5em;
+}
+
+@media (max-width: 900px) {
+  .create-form {
+    max-width: 98vw;
+    padding: 1rem 0.8rem;
+  }
+  .title-input textarea,
+  .snippet-input textarea,
+  .content-editable {
+    font-size: 0.98rem;
+  }
+  button {
+    font-size: 1rem;
+    padding: 0.7em 1.5em;
+    width: 40%;
+  }
+}
+
+@media (max-width: 600px) {
+  #create-container {
+    min-height: unset;
+    padding: 0;
+  }
+  .create-form {
+    max-width: 100vw;
+    padding: 0.7rem 0.2rem;
+    border-radius: 0;
+    box-shadow: none;
+    margin-top: 0.7rem;
+    gap: 1rem;
+  }
+  .title-input textarea {
+    min-height: 4em;
+  }
+  .snippet-input textarea {
+    min-height: 6em;
+  }
+  .content-editable {
+    min-height: 15em;
+  }
+  .title-input textarea,
+  .snippet-input textarea,
+  .content-editable {
+    font-size: 0.95rem;
+    padding: 0.5em;
+  }
+.label {
+  margin-bottom: 0.4em;
+  font-weight: 500;
+  font-size:0.9rem;
+  letter-spacing: 0.06em;
+}
+  button {
+    font-size: 0.98rem;
+    padding: 0.6em 1em;
+    width: 60%;
+    min-width: 120px;
+    max-width: 100%;
+  }
+  h2 {
+    font-size: 1.2rem;
+  }
+}

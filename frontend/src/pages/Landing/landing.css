@@ -1,0 +1,52 @@
+#landing-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 90vh;
+  padding: 2rem;
+  /* background-color: #fafafa; */
+  text-align: center;
+}
+
+#landing-container h2 {
+  font-size: clamp(2.5rem, 6vw, 4.2rem);
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: #222;
+}
+
+#landing-container h3 {
+  font-size: clamp(1.1rem, 3vw, 1.6rem);
+  font-weight: 400;
+  color: #555;
+  max-width: 600px;
+  margin-bottom: 2rem;
+  font-style: italic;
+}
+
+#buttons-InUp {
+  display: flex;
+  gap: 1.6rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+#buttons-InUp button {
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  background-color: #111;
+  color: #fff;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+  min-width: 150px;
+}
+
+#buttons-InUp button:hover {
+  background-color: #1a1a1a;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08); 
+}
