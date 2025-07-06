@@ -1,15 +1,18 @@
 const express = require("express");
 const router = express.Router();
 const validateRequest = require("../middleware/validationCheck");
-const { signInSchema, signUpSchema } = require("../models/types");
+const { signInSchema, signUpSchema, blogZodSchema } = require("../models/types");
 const Auth = require("../middleware/auth");
-const { blogZodSchema } = require("../models/types");
+
+const multer = require("multer");
+const { storage } = require("../utils/cloudinary");
+const upload = multer({ storage });
 
 const authController = require("../controllers/authController");
 const blogController = require("../controllers/blogControllers");
 
 
-router.post("/signup", validateRequest(signUpSchema), authController.signup);
+router.post("/signup",upload.single("image") , authController.signup);
 
 router.post("/signin", validateRequest(signInSchema), authController.signin);
 

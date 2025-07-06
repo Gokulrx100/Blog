@@ -1,12 +1,15 @@
 const { User } = require("../models/schema");
 const passwordHash = require("../utils/passwordHash");
+const { signUpSchema } = require("../models/types");
 const jwt = require("jsonwebtoken");
 const bcrypt = require("bcrypt");
 const secret = "123random";
 
 const signup = async (req, res) => {
   try {
+    signUpSchema.parse(req.body);
     let { name, gmail, username, password } = req.body;
+    const profilePic = req.file?.path || "";
     let userExists = await User.findOne({ username: username });
     if (userExists) {
       return res.status(401).json({ message: "User already Exists" });
@@ -18,13 +21,18 @@ const signup = async (req, res) => {
     let hashedPassword = await passwordHash(password);
     let user = new User({
       name: name,
-      gmail:gmail,
+      gmail: gmail,
       username: username,
       password: hashedPassword,
+      profilePic: profilePic,
     });
     await user.save();
-    res.json({ message: "signup successful" });
+    res.json({ message: "signup successful",user });
   } catch (err) {
+    if (err.errors && err.errors.length > 0) {
+      return res.status(400).json({ message: err.errors[0].message });
+    }
+    console.log(err);
     res.status(500).json({ message: "Internal server error" });
   }
 };
