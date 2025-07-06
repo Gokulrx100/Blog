@@ -31,7 +31,7 @@ const Home = () => {
             <div
               key={blog._id}
               className="blog-card"
-              onClick={() => navigate(`/blog/${blog._id}`)}
+              onClick={() => navigate(`/${blog.userId.username}/${blog.slug}`, {state:{blog}})}
             >
               <h2>{blog.title}</h2>
               <p>{blog.snippet}</p>

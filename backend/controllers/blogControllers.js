@@ -17,7 +17,7 @@ const createBlog = async (req, res) => {
 const getBlogs = async (req, res) => {
   try {
     const blogs = await Blog.find().populate("userId", "username");
-    res.json({ blogs: blogs });
+    res.json({ blogs: blogs.reverse() });
   } catch (err) {
     res.status(500).json({ message: "Internal server error" });
   }
