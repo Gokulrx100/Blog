@@ -29,4 +29,8 @@ router.delete("/deleteBlog/:id", Auth, blogController.deleteBlog);
 
 router.get("/:username/:slug", Auth, blogController.getBlogBySlug);
 
+router.get("/profile",Auth, blogController.getUserDetails);
+
+router.put("/updateBlog/:id", Auth, blogController.updateBlog);
+
 module.exports = router;

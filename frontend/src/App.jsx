@@ -5,8 +5,10 @@ import Signin from "./pages/signin/Signin";
 import Signup from "./pages/signup/Signup";
 import CreateBlog from "./pages/CreateBlogs/CreateBlog";
 import BlogDetails from "./pages/BlogDetails/BlogDetails";
-import Profile from "./pages/profile";
+import Profile from "./pages/Profile/profile";
 import ProtectedRoute from "./components/protectedRoute";
+import 'material-icons/iconfont/material-icons.css';
+
 function App() {
   return (
     <>
@@ -17,6 +19,7 @@ function App() {
           <Route path="/signin" element={<Signin />} />
           <Route path="/signup" element={<Signup />} />
           <Route path="/create" element={<ProtectedRoute><CreateBlog /></ProtectedRoute>} />
+          <Route path="/edit-blog" element={<ProtectedRoute><CreateBlog /></ProtectedRoute>} />
           <Route path="/:username/:slug" element={<ProtectedRoute><BlogDetails /></ProtectedRoute>} />
           <Route path="/profile" element={<ProtectedRoute><Profile /></ProtectedRoute>} />
         </Routes>

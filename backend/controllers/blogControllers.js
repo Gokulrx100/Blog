@@ -61,9 +61,43 @@ const getBlogBySlug = async (req, res) => {
   }
 };
 
+const getUserDetails= async (req,res)=>{
+  try{
+    const user=await User.findById(req.user._id).select("name username gmail profilePic");
+    if(!user){
+      return res.status(404).json({message:"User not found"});
+    }
+    const blogs=await Blog.find({userId:user._id}).populate("userId","username").sort({createdAt:-1});
+    res.json({user:user,blogs:blogs});
+  }catch(err){
+    res.status(500).json({message:"Internal server error"});
+  }
+}
+
+const updateBlog = async (req, res) => {
+  try {
+    const blogId = req.params.id;
+    const { title, snippet, content } = req.body;
+    const blog = await Blog.findById(blogId);
+    if (!blog) return res.status(404).json({ message: "Blog not found" });
+    if (blog.userId.toString() !== req.user._id.toString())
+      return res.status(403).json({ message: "Unauthorized" });
+
+    blog.title = title;
+    blog.snippet = snippet;
+    blog.content = content;
+    await blog.save();
+    res.json({ message: "Blog updated successfully" });
+  } catch (err) {
+    res.status(500).json({ message: "Internal server error" });
+  }
+};
+
 module.exports = {
   createBlog,
   getBlogs,
   deleteBlog,
   getBlogBySlug,
+  getUserDetails,
+  updateBlog
 };

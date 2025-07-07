@@ -15,8 +15,9 @@ const BlogSchema=new mongoose.Schema(
         snippet:{type:String},
         content:{type:String},
         userId:{type:mongoose.Schema.Types.ObjectId,required:true,ref:"User"},
-        slug:{type:String, required:true,unique:true}
-    }
+        slug:{type:String, required:true}
+    },
+    {timestamps:true}
 )
 
 BlogSchema.index({userId:1,slug:1},{unique:true});
