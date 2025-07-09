@@ -28,7 +28,6 @@ const Signup = () => {
       formData.append("username", username);
       formData.append("password", password);
       if (image) formData.append("image", image);
-      console.log(image);
 
       const response = await axios.post("http://localhost:3000/signup", formData, {
         headers: {

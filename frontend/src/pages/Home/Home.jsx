@@ -7,8 +7,10 @@ import "./Home.css"
 const Home = () => {
   const navigate=useNavigate();
   const [blogs,setBlogs]=useState([]);
+  const [loading,setLoading]=useState(true);
 
   async function fetchBlogs(){
+    try{
     const response=await axios.get("http://localhost:3000/getblogs",
       {
         headers : {
@@ -17,11 +19,27 @@ const Home = () => {
       }
     );
     setBlogs(response.data.blogs);
+  }catch(err){
+    setError(err.response?.data?.message || "Failed to fetch blogs");
+  }
+  finally{
+    setLoading(false);
+  }
   }
 
   useEffect(()=>{
     fetchBlogs();
   },[])
+
+  if(loading){
+    return(
+      <>
+        <Navbar/>
+        <div className="profile-loading">Loading...</div>
+      </>
+    )
+  }
+
   return (
     <>
       <Navbar />

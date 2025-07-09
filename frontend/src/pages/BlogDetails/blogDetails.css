@@ -4,9 +4,9 @@
   padding: 0 0.5rem 40px 0.5rem;
   color: #222;
   min-height: 80vh;
-  display:flex;
-  flex-direction:column;
-  align-items:center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .blog-content-wrapper {
@@ -19,15 +19,6 @@
   gap: 1.2rem;
 }
 
-.blog-title,
-.blog-snippet,
-.blog-meta {
-  text-align: center;
-  margin-left: auto;
-  margin-right: auto;
-  background: none;
-}
-
 .blog-title {
   font-size: 2.1rem;
   font-weight: 600;
@@ -35,6 +26,7 @@
   line-height: 1.2;
   letter-spacing: -0.01em;
   color: #181818;
+  text-align: center;
 }
 
 .blog-snippet {
@@ -43,10 +35,7 @@
   margin-bottom: 1em;
   font-style: italic;
   line-height: 1.6;
-  background: none;
-  border: none;
-  padding: 0.2em 0 0.7em 0;
-  border-radius: 0;
+  text-align: center;
 }
 
 .blog-body {
@@ -60,25 +49,24 @@
   border-radius: 8px; 
   box-shadow: 0 1px 6px 0 rgba(0,0,0,0.03); 
 }
-.blog-body * {
-  background: none;
-}
 
 .blog-meta {
+  display: flex;
+  align-items: center;
+  margin-top: 16px;
   font-size: 1rem;
   color: #888;
   font-style: italic;
-  margin-top: 0.5em;
-  text-align: right;
   letter-spacing: 0.03em;
+  justify-content: center;
 }
 
 .blog-meta span {
   color: #111;
   font-weight: 600;
   font-style: normal;
+  margin-right: 8px;
 }
-
 .error {
   color: #b00;
   text-align: center;
@@ -93,24 +81,21 @@
   color: #888;
 }
 
+/* Responsive styles */
 @media (max-width: 500px) {
   .blog-details-container {
     padding: 0 0.3rem 24px 0.3rem;
   }
-
   .blog-title {
     font-size: 1.1rem;
   }
-
   .blog-snippet {
     font-size: 0.9rem;
   }
-
   .blog-body {
     font-size: 0.9rem;
     padding: 1em;
   }
-
   .blog-meta {
     font-size: 0.85rem;
     text-align: center;
@@ -121,15 +106,12 @@
   .blog-title {
     font-size: 1.4rem;
   }
-
   .blog-snippet {
     font-size: 1rem;
   }
-
   .blog-body {
     font-size: 1rem;
   }
-
   .blog-meta {
     font-size: 0.9rem;
   }
@@ -139,15 +121,12 @@
   .blog-title {
     font-size: 1.6rem;
   }
-
   .blog-snippet {
     font-size: 1.05rem;
   }
-
   .blog-body {
     font-size: 1.05rem;
   }
-
   .blog-meta {
     font-size: 0.95rem;
   }

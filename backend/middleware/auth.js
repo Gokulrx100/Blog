@@ -1,5 +1,5 @@
 const jwt=require("jsonwebtoken");
-const secret = "123random";
+const secret = process.env.JWT_SECRET;
 const {User}=require("../models/schema")
 
 async function Auth(req, res, next) {

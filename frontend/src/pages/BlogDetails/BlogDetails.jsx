@@ -39,7 +39,7 @@ const BlogDetails = () => {
             <h1 className="blog-title">{blog.title}</h1>
             <div className="blog-snippet">{blog.snippet}</div>
             <div className="blog-body" dangerouslySetInnerHTML={{ __html: blog.content }} />
-            <div className="blog-meta">— by <span>{blog.userId.username}</span></div>
+            <div className="blog-meta">— by<span>{blog.userId.username}</span></div>
           </div>
         ) : !error ? (
           <div className="loading">Loading...</div>
