@@ -10,8 +10,8 @@ It provides a modern, responsive user interface for blog creation, user authenti
 - User signup and signin (with profile picture upload)
 - JWT-based authentication (communicates with backend)
 - Create, edit, delete, and view blogs
-- Comment on blogs
-- Like/unlike blogs
+- Comment on blogs > (work in progress 😓🛠️)
+- Like/unlike blogs > (work in progress 😓🛠️)
 - User profile page with avatar
 - Protected routes for authenticated users
 - Responsive and clean UI
