@@ -2,8 +2,6 @@
 
 A modern, feature-rich blogging platform built with React, Node.js, Express, and MongoDB. Create, share, and engage with blog posts in a clean, responsive interface.
 
-![Blogo Banner](https://via.placeholder.com/800x300/007bff/ffffff?text=Blogo+-+Modern+Blogging+Platform)
-
 ## ✨ Features
 
 ### 🔐 Authentication & User Management
