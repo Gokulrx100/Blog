@@ -15,6 +15,7 @@ const Signin = () => {
         password,
       });
       localStorage.setItem("token", response.data.token);
+      localStorage.setItem("userId",response.data.userId)
       console.log(response.data.message);
       window.location = "/home";
     } catch (err) {
