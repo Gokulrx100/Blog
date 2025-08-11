@@ -424,10 +424,6 @@ npm run build
    ```
 5. **Open a Pull Request**
 
-## 📝 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
 ## 🙏 Acknowledgments
 
 - **React Team** for the amazing UI library
@@ -440,7 +436,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 If you have any questions or need help, please:
 
-1. Check the [Issues](https://github.com/yourusername/blogo/issues) page
+1. Check the [Issues](https://github.com/Gokulrx100/Blog/issues) page
 2. Create a new issue if your problem isn't already listed
 3. Contact the maintainers
 
